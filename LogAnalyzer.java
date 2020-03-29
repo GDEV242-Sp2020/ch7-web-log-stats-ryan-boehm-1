@@ -12,18 +12,28 @@ public class LogAnalyzer
     private LogfileReader reader;
 
     /**
-     * Create an object to analyze hourly web accesses.
-     * 
-     * Modified the LogAnalyzer class so the contstructor can take the name of the log file to be analayzed. 7.12 - 
-     * - Angelina 
+     * Create an object to analyze hourly web accesses. 
      */
-    public LogAnalyzer(String fileName)
+    public LogAnalyzer()
     { 
         // Create the array object to hold the hourly
         // access counts.
         hourCounts = new int[24];
         // Create the reader to obtain the data.
-        reader = new LogfileReader(fileName);
+        reader = new LogfileReader();
+    }
+    
+    /**
+     * Create an object to analyze hourly web accesses of a log file with
+     * a specific name. 
+     */
+    public LogAnalyzer(String logName)
+    { 
+        // Create the array object to hold the hourly
+        // access counts.
+        hourCounts = new int[24];
+        // Create the reader to obtain the data.
+        reader = new LogfileReader(logName);
     }
     
     /**
