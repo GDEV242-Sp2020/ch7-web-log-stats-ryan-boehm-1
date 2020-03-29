@@ -76,6 +76,18 @@ public class LogAnalyzer
         }
     }
     
+    public int busiestHour() {
+        int busiestAmount = 0;
+        int busiestHour = 0;
+        for(int i = 0; i < hourCounts.length; i++) {
+            if(hourCounts[i] > busiestAmount) {
+                busiestHour = i;
+                busiestAmount = hourCounts[i];
+            }
+        }
+        return busiestHour;
+    }
+    
     /**
      * Print the lines of data read by the LogfileReader
      */
