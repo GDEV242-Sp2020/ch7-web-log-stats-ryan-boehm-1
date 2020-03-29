@@ -37,23 +37,16 @@ public class LogAnalyzer
     }
     
     /**
-     * Complete the numberOfAccesses method t count total number of accesses record in the log file 7.13
+     * Complete the numberOfAccesses method t count total number of accesses record in the log file
      * @return number of accesses
-     * 
      */
     
     public int numberOfAccesses()
     {
         int total = 0;
-        
-        // Add the value in each element of hourCounts to total
-        
-        for(int i = 0; i < hourCounts.length; i++)
-        
-        {
-            total+= hourCounts[i]; 
+        for(int i = 0; i < hourCounts.length; i++) {
+            total = total + hourCounts[i]; 
         }
-        
         return total;
     }
     
