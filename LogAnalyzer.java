@@ -76,6 +76,9 @@ public class LogAnalyzer
         }
     }
     
+    /**
+     * Returns the busiest hour of the day.
+     */
     public int busiestHour() {
         int busiestAmount = 0;
         int busiestHour = 0;
@@ -86,6 +89,22 @@ public class LogAnalyzer
             }
         }
         return busiestHour;
+    }
+    
+    /**
+     * Returnsz the quietest hour of the day.
+     */
+    public int quietestHour() {
+        int temp = busiestHour();
+        int quietestAmount = hourCounts[temp];
+        int quietestHour = 0;
+        for(int i = 0; i < hourCounts.length; i++) {
+            if(!(hourCounts[i] > quietestAmount)) {
+                quietestHour = i;
+                quietestAmount = hourCounts[i];
+            }
+        }
+        return quietestHour;
     }
     
     /**
