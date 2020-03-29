@@ -108,6 +108,21 @@ public class LogAnalyzer
     }
     
     /**
+     * Returns the busiest two-hour period.
+     */
+    public int busiestTwoHour() {
+        int busiestAmount = 0;
+        int busiestHour = 0;
+        for(int i = 1; i < hourCounts.length; i++) {
+            if(hourCounts[i-1] + hourCounts[i] > busiestAmount) {
+                busiestHour = i-1;
+                busiestAmount = hourCounts[i-1] + hourCounts[i];
+            }
+        }
+        return busiestHour;
+    }
+    
+    /**
      * Print the lines of data read by the LogfileReader
      */
     public void printData()
